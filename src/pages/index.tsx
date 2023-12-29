@@ -11,9 +11,9 @@ export default function Home() {
     setCount(count + 1);
   };
 
-  function onDown() {
+  const onDown = () => {
     setCount(count - 1);
-  }
+  };
 
   return (
     <>
