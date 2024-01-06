@@ -9,7 +9,7 @@ import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { Modal } from "@/components/atoms/Modal";
-import Button from "@mui/material/Button";
+import {Button } from "@/components/atoms/Button";
 
 type Props = {
   title: string;
@@ -47,13 +47,21 @@ export const JobCard: FC<Props> = ({ title, price, address, onClick }) => {
           // margin="30px auto"
           // padding="25px"
         >
-          <Typography color="#f00">{title}</Typography>
+          <Typography variant="Ch1"  color="#f00">{title}</Typography>
           <Typography fontWeight="bold">時給 {price}円</Typography>
           <Typography fontSize="12px">{address}</Typography>
         </Stack>
 
         <React.Fragment>
-          <Button variant="outlined" onClick={handleClickOpen}>
+          <Button sx={{
+            borderRadius: "0px",
+            margin: "0px",
+            h:"40px",
+            w:"100%",
+            m: 0,
+            p: 0,
+            bgcolor: "#f00",
+          }}  color="secondary"  variant="outlined" onClick={handleClickOpen}>
             詳しく見る
           </Button>
           <BootstrapDialog
