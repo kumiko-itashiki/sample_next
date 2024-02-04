@@ -1,0 +1,19 @@
+import { List as MuiList } from "@mui/material";
+import type { ListProps } from "@mui/material";
+import { styled } from "@mui/system";
+
+interface StyledListProps extends ListProps {
+  shadow?: "shadow" | string;
+}
+
+/**
+ * [molecules] MuiのListにプロジェクト用themeを適用したコンポーネント
+ * @param props - StyledListProps
+ */
+export const List = styled(MuiList)<StyledListProps>(({ shadow, theme }) => ({
+  padding: 0,
+  margin: 0,
+  ...(shadow == "shadow"
+    ? { boxShadow: `0 8px 24px 0 ${theme.palette.shadow.main}` }
+    : { boxShadow: shadow }),
+}));
