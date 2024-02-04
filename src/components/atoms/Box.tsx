@@ -1,11 +1,11 @@
-import { Box as MuiBox } from '@mui/material';
-import type { BoxProps } from '@mui/material';
-import { styled } from '@mui/system';
+import { Box as MuiBox } from "@mui/material";
+import type { BoxProps } from "@mui/material";
+import { styled } from "@mui/system";
 
 /** Boxのpropsの型 */
 interface StyledBoxProps extends BoxProps {
-  bgColor?: 'primary' | string;
-  shadow?: 'primary' | 'gray' | string;
+  bgColor?: "primary" | string;
+  shadow?: "primary" | "gray" | string;
 }
 
 /**
@@ -13,22 +13,18 @@ interface StyledBoxProps extends BoxProps {
  * @param props - StyledBoxProps
  */
 export const Box = styled(MuiBox, {
-  shouldForwardProp: (props) => props !== 'bgColor',
+  shouldForwardProp: (props) => props !== "bgColor",
 })<StyledBoxProps>(({ bgColor, shadow, theme }) => ({
-  ...(bgColor == 'primary'
+  ...(bgColor == "primary"
     ? { background: theme.palette.primary.pale }
-    : bgColor == 'secondary'
-    ? { background: theme.palette.accent.main }
-    : bgColor == 'gray'
+    : bgColor == "gray"
     ? { background: theme.palette.gray.light }
-    : bgColor == 'gray.light'
-    ? { background: theme.palette.gray.light }
-    : bgColor == 'white'
-    ? { background: theme.palette.white }
+    : bgColor == "white"
+    ? { background: theme.palette.white.main }
     : { background: bgColor }),
-  ...(shadow == 'primary'
+  ...(shadow == "primary"
     ? { boxShadow: `0 2px 4px 0 ${theme.palette.primary.main}` }
-    : shadow == 'gray'
+    : shadow == "gray"
     ? { boxShadow: `0 2px 4px 0 ${theme.palette.shadow.main}` }
     : { boxShadow: shadow }),
 }));

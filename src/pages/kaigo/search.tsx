@@ -16,19 +16,19 @@ export default function Search() {
         >
           <JobCard
             title="水やり"
-            price="3000"
+            price={3000}
             address="日本"
             onClick={() => {}}
           />
           <JobCard
             title="田植え"
-            price="4000"
+            price={4000}
             address="アメリカ"
             onClick={() => {}}
           />
           <JobCard
             title="エンジニア"
-            price="1000"
+            price={1000}
             address="日本"
             onClick={() => {}}
           />

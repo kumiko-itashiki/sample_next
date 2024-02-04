@@ -1,8 +1,6 @@
-import { Typography as MuiTypography } from '@mui/material';
-import type { TypographyProps, TypographyVariantsOptions } from '@mui/material';
-import { styled } from '@mui/system';
-
-import { ExOmit } from '@/util/type';
+import { Typography as MuiTypography } from "@mui/material";
+import type { TypographyProps, TypographyVariantsOptions } from "@mui/material";
+import { styled } from "@mui/system";
 
 /** Typographyの型にReact.ElementTypeをオプショナルで追加 */
 interface IExTypographyProps extends TypographyProps {
@@ -11,7 +9,7 @@ interface IExTypographyProps extends TypographyProps {
 
 // TODO: ?外す　（影響範囲広そうなので一旦？つけてます）
 /** Typographyの型 */
-type TProps = ExOmit<IExTypographyProps, 'variant'> & {
+type TProps = ExOmit<IExTypographyProps, "variant"> & {
   variant?: keyof TypographyVariantsOptions;
 };
 
